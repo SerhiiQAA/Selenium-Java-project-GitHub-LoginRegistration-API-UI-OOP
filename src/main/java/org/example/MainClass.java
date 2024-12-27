@@ -18,7 +18,7 @@ public class MainClass {
         System.out.println(driver.getCurrentUrl());
 //        System.out.println(driver.getPageSource());
         SignUpPage signUpPage = new SignUpPage(driver);
-        signUpPage.registerWithInvalidCredts("sdsd@dd.gsg", "s22345dfsff" , "QQdsfffffffffffffffff");
+        signUpPage.registerWithInvalidCredts("sdsd@dd.gsg", "s22345Victorydfsff" , "QQdsfffffffffffffffff");
 //
         driver.quit();
     }
