@@ -37,7 +37,7 @@ public class SignInPage {
         return driver.findElement(error).getText();
     }
     public SignUpPage createAccount(){
-        driver.findElement(createAccLink).getText();
+        driver.findElement(createAccLink).click();
         return new SignUpPage(driver);
     }
 }

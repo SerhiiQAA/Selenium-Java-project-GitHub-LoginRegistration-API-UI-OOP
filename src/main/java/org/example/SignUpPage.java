@@ -13,7 +13,7 @@ public class SignUpPage {
     private By email = By.xpath("//*[@id=\"email\"]");
     private By password = By.xpath("//*[@id=\"password\"]");
     private By username = By.xpath("//*[@id=\"login\"]");
-    private By continueButton = By.xpath("(//span[@cla ss=\"Button-content\"])[1]");
+    private By continueButton = By.xpath("/html/body/div[1]/div[4]/div/main/div/div[2]/div[2]/div/div[2]/div/form/div[3]/button/span");
     private By emailError = By.xpath("/html/body/div[1]/div[4]/div/main/div/div[2]/div[2]/div/div[2]/div/form/div[2]/div[1]/div[1]/auto-check/div/p");
     private By passwordError = By.xpath("/html/body/div[1]/div[4]/div/main/div/div[2]/div[2]/div/div[2]/div/form/div[2]/div[2]/div[1]/div[1]/visible-password/auto-check/div/p");
     private By userNameError = By.xpath("/html/body/div[1]/div[4]/div/main/div/div[2]/div[2]/div/div[2]/div/form/div[2]/div[3]/div[2]/div[1]/auto-check/div[2]/p");
@@ -34,6 +34,10 @@ public class SignUpPage {
         this.typeEmail(email);
         this.typePassword(password);
         this.typeUserName(username);
+        return new SignUpPage(driver);
+    }
+    public SignUpPage continueClick(){
+        driver.findElement(continueButton).click();
         return new SignUpPage(driver);
     }
     public String getHeadingText(){
