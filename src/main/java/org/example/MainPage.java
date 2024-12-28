@@ -43,7 +43,7 @@ public class MainPage {
 //    public SignUpPage register(String username, String email, String password){
 //        this.typeEmail(email);
 //        this.typePassword(password);
-//        this.typeUserName(name);
+//        this.typeUserName(username);
 //        this.clickSignUp();
 //    }
 
