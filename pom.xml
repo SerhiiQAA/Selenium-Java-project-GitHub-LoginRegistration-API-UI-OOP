@@ -84,12 +84,16 @@
                 <groupId>io.gatling</groupId>
                 <artifactId>gatling-maven-plugin</artifactId>
                 <version>${gatling-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
-                    <configFolder>src/test/java/performance/resources</configFolder>
-                    <dataFolder>src/test/java/performance/resources/data</dataFolder>
-                    <resultsFolder>target/Performance/results</resultsFolder>
-                    <bodiesFolder>src/test/java/performance/resources/bodies</bodiesFolder>
-                    <simulationsFolder>src/test/Performance/scala</simulationsFolder>
+                    <simulationsFolder>src/test/loadtest/scala</simulationsFolder>
+                    <resultsFolder>target/loadtest/results</resultsFolder>
                 </configuration>
             </plugin>
         </plugins>
