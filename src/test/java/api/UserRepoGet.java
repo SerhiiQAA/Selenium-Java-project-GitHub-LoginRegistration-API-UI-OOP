@@ -1,25 +1,25 @@
-package API;
+package api;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class UserGet {
+public class UserRepoGet {
 
     @Test
-    public void testGetUser() {
+    public void testListUserRepos() {
         // Вказуємо базовий URL для GitHub API
         RestAssured.baseURI = "https://api.github.com";
 
         // Вказуємо ім'я користувача
         String username = "octocat";
 
-        // Виконуємо GET запит для отримання інформації про користувача
+        // Виконуємо GET запит для отримання списку репозиторіїв користувача
         Response response = RestAssured
                 .given()
                 .when()
-                .get("/users/" + username);
+                .get("/users/" + username + "/repos");
 
         // Перевіряємо статус-код відповіді
         Assert.assertEquals(200, response.getStatusCode());

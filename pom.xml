@@ -58,44 +58,19 @@
         </dependency>
 
         <!-- Gatling залежності -->
+        <!-- https://mvnrepository.com/artifact/io.gatling/gatling-core-java -->
         <dependency>
-            <groupId>io.gatling.highcharts</groupId>
-            <artifactId>gatling-charts-highcharts</artifactId>
-            <version>${gatling.version}</version>
-            <scope>test</scope>
+            <groupId>io.gatling</groupId>
+            <artifactId>gatling-core-java</artifactId>
+            <version>3.13.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.gatling/gatling-http-java -->
+        <dependency>
+            <groupId>io.gatling</groupId>
+            <artifactId>gatling-http-java</artifactId>
+            <version>3.13.1</version>
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <!-- Maven Compiler Plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                </configuration>
-            </plugin>
 
-            <!-- Gatling Maven Plugin -->
-            <plugin>
-                <groupId>io.gatling</groupId>
-                <artifactId>gatling-maven-plugin</artifactId>
-                <version>${gatling-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <simulationsFolder>src/test/loadtest/scala</simulationsFolder>
-                    <resultsFolder>target/loadtest/results</resultsFolder>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>

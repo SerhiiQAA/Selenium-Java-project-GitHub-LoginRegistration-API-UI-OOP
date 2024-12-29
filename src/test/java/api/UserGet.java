@@ -1,26 +1,25 @@
-package API;
+package api;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class SearchUsersGet {
+public class UserGet {
 
     @Test
-    public void testSearchUsers() {
+    public void testGetUser() {
         // Вказуємо базовий URL для GitHub API
         RestAssured.baseURI = "https://api.github.com";
 
-        // Створюємо параметри запиту
-        String query = "john";
+        // Вказуємо ім'я користувача
+        String username = "octocat";
 
-        // Виконуємо GET запит до пошукового API
+        // Виконуємо GET запит для отримання інформації про користувача
         Response response = RestAssured
                 .given()
-                .queryParam("q", query)
                 .when()
-                .get("/search/users");
+                .get("/users/" + username);
 
         // Перевіряємо статус-код відповіді
         Assert.assertEquals(200, response.getStatusCode());
@@ -29,5 +28,3 @@ public class SearchUsersGet {
         System.out.println("Body: " + response.getBody().asString());
     }
 }
-
-

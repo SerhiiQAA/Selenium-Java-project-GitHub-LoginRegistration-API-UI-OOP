@@ -1,19 +1,18 @@
-package API;
+package api;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class SearchRepoGet {
-
+public class MainSearchGet {
     @Test
     public void testSearchRepository() {
         // Вказуємо базовий URL для GitHub API
         RestAssured.baseURI = "https://api.github.com";
 
         // Створюємо параметри запиту
-        String query = "selenium";
+        String query = "selenium"; // Вставте тут ваш пошуковий запит
 
         // Виконуємо GET запит до пошукового API
         Response response = RestAssured
@@ -24,6 +23,9 @@ public class SearchRepoGet {
 
         // Перевіряємо статус-код відповіді
         Assert.assertEquals(200, response.getStatusCode());
+
+        // Виводимо заголовки відповіді
+        System.out.println("Headers: " + response.getHeaders());
 
         // Виводимо тіло відповіді
         System.out.println("Body: " + response.getBody().asString());
