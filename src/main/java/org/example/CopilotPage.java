@@ -13,6 +13,7 @@ public class CopilotPage {
     private By seePlans = By.xpath("//span[text()='See plans & pricing']");
     private By openNow = By.xpath("(//span//a[text()='Open now'])[1]");
     private By checkTitle = By.xpath("//h1[text()=\"The AI editor for everyone\"]");
+    private By heading = By.xpath("//h1[@id=\"hero-section-brand-heading\"]");
     private By checkTitleForCopilotTry = By.xpath("//h1[text()='Sign in to GitHub']");
     private By checkTitleForCopilotPlans = By.xpath("//h2[text()='Take flight with GitHub Copilot']");
 
@@ -31,5 +32,8 @@ public class CopilotPage {
     public CopilotPage checkCopilotTitle(){
         driver.findElement(checkTitle).click();
         return new CopilotPage(driver);
+    }
+    public String getHeadingText(){
+        return driver.findElement(heading).getText();
     }
 }

@@ -1,5 +1,6 @@
 package org.example;
 import org.apache.commons.io.FileUtils;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -12,6 +13,7 @@ public class MainClass {
     public static void main(String[] args) throws InterruptedException {
         FirefoxOptions options = new FirefoxOptions();
         options.setCapability("moz:webdriver-bidi", true);
+
         WebDriver driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
 //        driver.manage().window().maximize();
@@ -35,6 +37,7 @@ public class MainClass {
 //        signUpPage.registerWithInvalidCredts("", "" , "");
         Thread.sleep(2000);
         signUpPage.continueClick();
+        signUpPage.continueClick();
 //        Thread.sleep(2000);
         signUpPage.getEmailErrorText();
         signUpPage.getPasswordErrorText();
@@ -42,5 +45,7 @@ public class MainClass {
 //        System.out.println(signUpPage.getUserNameErrorText());
 
         driver.quit();
+        driver = null;
+        System.gc();
     }
 }
