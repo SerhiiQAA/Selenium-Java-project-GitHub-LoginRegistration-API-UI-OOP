@@ -17,6 +17,7 @@ public class SignUpPage {
     private By emailError = By.xpath("/html/body/div[1]/div[4]/div/main/div/div[2]/div[2]/div/div[2]/div/form/div[2]/div[1]/div[1]/auto-check/div/p");
     private By passwordError = By.xpath("/html/body/div[1]/div[4]/div/main/div/div[2]/div[2]/div/div[2]/div/form/div[2]/div[2]/div[1]/div[1]/visible-password/auto-check/div/p");
     private By userNameError = By.xpath("/html/body/div[1]/div[4]/div/main/div/div[2]/div[2]/div/div[2]/div/form/div[2]/div[3]/div[2]/div[1]/auto-check/div[2]/p");
+    private By userNameErrorIsNotAvailable = By.xpath("//div[text()='Username user is not available.']");
 
     public SignUpPage typeEmail(String emailAdress){
         driver.findElement(email).sendKeys(emailAdress);
@@ -51,6 +52,9 @@ public class SignUpPage {
     }
     public String getUserNameErrorText(){
         return driver.findElement(userNameError).getText();
+    }
+    public String getUserNameErrorIsNotAvailable(){
+        return driver.findElement(userNameErrorIsNotAvailable).getText();
     }
 
 }

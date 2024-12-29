@@ -1,4 +1,5 @@
-import org.example.SignInPage;
+package ui;
+
 import org.example.SignUpPage;
 import org.junit.After;
 import org.junit.Assert;
@@ -20,6 +21,11 @@ public class SignUpPageTest {
         driver.manage().window().maximize();
         driver.get("https://github.com/signup");
         signUpPage = new SignUpPage(driver);
+    }
+    @Test
+    public void getHeadingTest(){
+        String heading = signUpPage.getHeadingText();
+        Assert.assertEquals("Sign up to GitHub", heading);
     }
     @Test
     public void singUpInvalidEmptyCreds(){
@@ -69,11 +75,11 @@ public class SignUpPageTest {
     public void singUpInvalidUsernameIsNotAvailable(){
         SignUpPage newSignUpPage = signUpPage.registerWithInvalidCredts("sdfsdf@df.ddf", "er1111111111rr", "user");
         SignUpPage clickContinue = signUpPage.continueClick();
-        String errorEmail = newSignUpPage.getEmailErrorText();
+         String errorEmail = newSignUpPage.getEmailErrorText();
         String errorPassword = newSignUpPage.getPasswordErrorText();
-        String errorUsername = newSignUpPage.getUserNameErrorText();
-//        Assert.assertEquals("Email cannot be blank", errorEmail);
-//        Assert.assertEquals("Password cannot be blank", errorPassword);
+        String errorUsername = newSignUpPage.getUserNameErrorIsNotAvailable();
+        Assert.assertEquals("Email is available", errorEmail);
+        Assert.assertEquals("Password cannot be blank", errorPassword);
         Assert.assertEquals("Username user is not available.", errorUsername);
     }
     @Test

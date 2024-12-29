@@ -1,3 +1,5 @@
+package ui;
+
 import org.example.CopilotPage;
 import org.example.MainPage;
 import org.example.SignInPage;
@@ -7,8 +9,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.concurrent.TimeUnit;
 

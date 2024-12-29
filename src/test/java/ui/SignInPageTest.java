@@ -1,3 +1,5 @@
+package ui;
+
 import org.example.SignInPage;
 import org.example.SignUpPage;
 import org.junit.After;
