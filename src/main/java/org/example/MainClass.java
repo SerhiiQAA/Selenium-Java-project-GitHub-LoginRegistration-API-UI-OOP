@@ -1,12 +1,8 @@
 package org.example;
-import org.apache.commons.io.FileUtils;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class MainClass {
@@ -39,9 +35,9 @@ public class MainClass {
         signUpPage.continueClick();
         signUpPage.continueClick();
 //        Thread.sleep(2000);
-        signUpPage.getEmailErrorText();
-        signUpPage.getPasswordErrorText();
-        signUpPage.getUserNameErrorText();
+        signUpPage.getEmailErrorTextBlank();
+        signUpPage.getPasswordErrorTextBlank();
+        signUpPage.getUserNameErrorTextBlank();
 //        System.out.println(signUpPage.getUserNameErrorText());
 
         driver.quit();

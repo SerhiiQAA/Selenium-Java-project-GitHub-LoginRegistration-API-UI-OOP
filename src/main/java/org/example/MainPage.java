@@ -9,12 +9,12 @@ public class MainPage {
     public MainPage(WebDriver driver){
         this.driver = driver;
     }
-    private By signInMenuButton = By.xpath("/html/body/div[1]/div[3]/header/div/div[2]/div/div/div/a");
-    private By signUpMenuButton = By.xpath("/html/body/div[1]/div[3]/header/div/div[2]/div/div/a");
-    private By signUpFormButton = By.xpath("/html/body/div[1]/div[6]/main/react-app/div/div/div/section[1]/div[1]/div[5]/div/form/section/div/button");
-    private By tryCopilotButton = By.xpath("/html/body/div[1]/div[6]/main/react-app/div/div/div/section[1]/div[1]/div[5]/div/a");
+    private By signInMenuButton = By.xpath("(//a[@href=\"/login\"])[2]");
+    private By signUpMenuButton = By.xpath("//a[contains(@href, 'signup') and contains(@href, 'source=header-home')]");
+    private By signUpFormButton = By.xpath("(//button[@type=\"submit\"])[3]");
+    private By tryCopilotButton = By.xpath("(//a[@href=\"/features/copilot\"])[1]");
     private By emailField = By.xpath("(//input[@name=\"user_email\"])[1]");
-    private By searchField = By.xpath("/html/body/div[1]/div[3]/header/div/div[2]/div/div/qbsearch-input/div[1]/button/span");
+    private By searchField = By.xpath("//span[@class=\"flex-1\"]");
 
     public SignInPage clickSignIn(){
         driver.findElement(signInMenuButton).click();

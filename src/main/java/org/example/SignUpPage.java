@@ -13,11 +13,18 @@ public class SignUpPage {
     private By email = By.xpath("//*[@id=\"email\"]");
     private By password = By.xpath("//*[@id=\"password\"]");
     private By username = By.xpath("//*[@id=\"login\"]");
-    private By continueButton = By.xpath("/html/body/div[1]/div[4]/div/main/div/div[2]/div[2]/div/div[2]/div/form/div[3]/button/span");
-    private By emailError = By.xpath("/html/body/div[1]/div[4]/div/main/div/div[2]/div[2]/div/div[2]/div/form/div[2]/div[1]/div[1]/auto-check/div/p");
-    private By passwordError = By.xpath("/html/body/div[1]/div[4]/div/main/div/div[2]/div[2]/div/div[2]/div/form/div[2]/div[2]/div[1]/div[1]/visible-password/auto-check/div/p");
-    private By userNameError = By.xpath("/html/body/div[1]/div[4]/div/main/div/div[2]/div[2]/div/div[2]/div/form/div[2]/div[3]/div[2]/div[1]/auto-check/div[2]/p");
-    private By userNameErrorIsNotAvailable = By.xpath("//div[text()='Username user is not available.']");
+    private By continueButton = By.xpath("(//span[@class=\"Button-content\"])[1]");
+
+    private By emailErrorBlank = By.xpath("(//p[@class=\"mb-0\"])[1]");
+    private By emailErrorInvalidData = By.xpath("(//div[@class=\"error\"])[1]");
+
+    private By passwordErrorBlank = By.xpath("(//p[@class=\"mb-0\"])[2]");
+    private By passwordErrorTooShot = By.xpath("//p[@class=\"password-validity-summary password-validity-summary-fail my-2\"]");
+    private By passwordErrorTooLong = By.xpath("//p[@class=\"password-validity-summary password-validity-summary-fail my-2\"]");
+    private By passwordErrorSpecialSymbol = By.xpath("//p[contains(text(), \"Password needs a number and lowercase letter\")]");
+
+    private By userNameErrorBlank = By.xpath("//p[text()=\"Username cannot be blank\"]");
+    private By userNameErrorIsNotAvailable = By.xpath("//div[@class=\"m-1\"]/div");
 
     public SignUpPage typeEmail(String emailAdress){
         driver.findElement(email).sendKeys(emailAdress);
@@ -44,14 +51,31 @@ public class SignUpPage {
     public String getHeadingText(){
         return driver.findElement(heading).getText();
     }
-    public String getEmailErrorText(){
-        return driver.findElement(emailError).getText();
+
+    public String getEmailErrorTextBlank(){
+        return driver.findElement(emailErrorBlank).getText();
     }
-    public String getPasswordErrorText(){
-        return driver.findElement(passwordError).getText();
+    public String getEmailErrorTextInvalidData(){
+        return driver.findElement(emailErrorInvalidData).getText();
     }
-    public String getUserNameErrorText(){
-        return driver.findElement(userNameError).getText();
+
+
+    public String getPasswordErrorTextBlank(){
+        return driver.findElement(passwordErrorBlank).getText();
+    }
+    public String getPasswordErrorTextTooShort(){
+        return driver.findElement(passwordErrorTooShot).getText();
+    }
+    public String getPasswordErrorTextTooLong(){
+        return driver.findElement(passwordErrorTooLong).getText();
+    }
+    public String getPasswordErrorSpecialSymbol(){
+        return driver.findElement(passwordErrorSpecialSymbol).getText();
+    }
+
+
+    public String getUserNameErrorTextBlank(){
+        return driver.findElement(userNameErrorBlank).getText();
     }
     public String getUserNameErrorIsNotAvailable(){
         return driver.findElement(userNameErrorIsNotAvailable).getText();

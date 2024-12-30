@@ -9,12 +9,12 @@ public class SignInPage {
     public SignInPage(WebDriver driver){
         this.driver = driver;
     }
-    private By userName = By.xpath("//*[@id=\"login_field\"]");
-    private By userPassword = By.xpath("//*[@id=\"password\"]");
-    private By signInButton = By.xpath("/html/body/div[1]/div[3]/main/div/div[4]/form/div/input[13]");
-    private By heading = By.xpath("/html/body/div[1]/div[3]/main/div/div[1]/h1");
-    private By error = By.xpath("/html/body/div[1]/div[3]/main/div/div[2]/div/div/div");
-    private By createAccLink = By.xpath("/html/body/div[1]/div[3]/main/div/div[5]/p/a");
+    private By userName = By.xpath("//input[@name=\"login\"]");
+    private By userPassword = By.xpath("//input[@id=\"password\"]");
+    private By signInButton = By.xpath("//input[@value=\"Sign in\"]");
+    private By heading = By.xpath("//h1[1]");
+    private By error = By.xpath("//div[@role=\"alert\"]");
+    private By createAccLink = By.xpath("//a[@data-ga-click=\"Sign in, switch to sign up\"]");
 
     public SignInPage typeUserName(String username){
         driver.findElement(userName).sendKeys(username);
