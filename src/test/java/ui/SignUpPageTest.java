@@ -1,5 +1,5 @@
 package ui;
-//It`s cool
+//=================== made by SerhiiQAA =================
 import org.example.SignUpPage;
 import org.junit.After;
 import org.junit.Assert;
