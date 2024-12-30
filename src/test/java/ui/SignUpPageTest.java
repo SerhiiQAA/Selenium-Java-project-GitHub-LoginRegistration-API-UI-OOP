@@ -1,5 +1,5 @@
 package ui;
-
+//It`s cool
 import org.example.SignUpPage;
 import org.junit.After;
 import org.junit.Assert;
