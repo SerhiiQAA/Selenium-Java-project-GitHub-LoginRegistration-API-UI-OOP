@@ -25,6 +25,11 @@ public class SignInPageTest {
         signInPage = new SignInPage(driver);
     }
     @Test
+    public void getHeadingTest(){
+        String heading = signInPage.getHeadingText();
+        Assert.assertEquals("Sign in to GitHub", heading);
+    }
+    @Test
     public void signInInvalidDataTest(){
         SignInPage newSignInPage = signInPage.signInInvalidCreds("./", "lkj");
         String error = newSignInPage.getErrorText();
