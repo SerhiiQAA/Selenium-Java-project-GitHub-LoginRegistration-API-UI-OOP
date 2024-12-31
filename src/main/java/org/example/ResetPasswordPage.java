@@ -13,10 +13,11 @@ public class ResetPasswordPage {
     private By verifyButton = By.xpath("//button[text()=\"Verify\"]");
     private By verifyHeader = By.xpath("//h2[@class=\"f4 mb-3\"]");
     private By audioButton = By.xpath("//button[@aria-label=\"Audio\"]");
+    private By submitButton = By.xpath("//button[text()=\"Submit\"]");
     private By visulButton = By.xpath("//button[@aria-label=\"Visual\"]");
     private By restartButton = By.xpath("//button[@aria-label=\"Restart\"]");
+    private By incorrectVerifyHeader = By.xpath("aria-label=\"That was not quite right.\"");
     private By sendPasswordResetEmail = By.xpath("//input[@value=\"Send password reset email\"]");
-
 
     public String getHeadingText(){
         return driver.findElement(heading).getText();
@@ -36,6 +37,16 @@ public class ResetPasswordPage {
     public ResetPasswordPage audioButton(){
         driver.findElement(audioButton).click();
         return new ResetPasswordPage(driver);
+    }
+    public String getVerifyHeaderText(){
+        return driver.findElement(verifyHeader).getText();
+    }
+    public ResetPasswordPage submitButton(){
+        driver.findElement(submitButton).click();
+        return new ResetPasswordPage(driver);
+    }
+    public String getVerifyErrorHeaderText(){
+        return driver.findElement(incorrectVerifyHeader).getText();
     }
 
 }
