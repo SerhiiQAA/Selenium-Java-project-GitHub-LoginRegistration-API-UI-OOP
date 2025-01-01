@@ -1,4 +1,4 @@
-# Selenium-Java_practice
+# Selenium+Java_project
 ## UI / API / Performance
 OOP is OOP...
 JAVA is just made for this. 
